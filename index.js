@@ -15,14 +15,18 @@ const fs = require('fs');
   // Create a new page
   const page = await browser.newPage();
 
-  //Get HTML content from HTML file
+  // Get HTML content from HTML file
+  // TODO: HTML sent from API invoke to the API service running on node.js?
   const html = fs.readFileSync('sample.html', 'utf-8');
   await page.setContent(html, { waitUntil: 'domcontentloaded' });
 
   // To reflect CSS used for screens instead of print
+  // TODO: will it work when running on AKS / using alpine base image.
+  //       reference: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-on-alpine
   await page.emulateMediaType('screen');
 
   // Download the PDF
+  // TODO: PDF Transfered as API reponse on base64 format
   const pdf = await page.pdf({
     path: 'result.pdf',
     margin: { top: '100px', right: '50px', bottom: '100px', left: '50px' },
