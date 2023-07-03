@@ -22,7 +22,7 @@ const fs = require('fs');
 
   // To reflect CSS used for screens instead of print
   // TODO: will it work when running on AKS / using alpine base image.
-  //       reference: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-on-alpine
+  //       https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-on-alpine
   await page.emulateMediaType('screen');
 
   // Download the PDF
