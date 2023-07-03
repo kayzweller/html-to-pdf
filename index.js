@@ -9,6 +9,7 @@ const fs = require('fs');
     // `headless: true` (default) enables old Headless;
     // `headless: 'new'` enables new Headless;
     // `headless: false` enables “headful” mode.
+    args: ['--disable-dev-shm-usage']
   });
 
   // Create a new page
